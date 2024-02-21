@@ -21,6 +21,44 @@ router.get('/contact/lister',controller.listerContact);
 
 
 
+
+/**
+ * @swagger
+ * /contact/ajouter:
+ *   post:
+ *     summary: Ajouter un contact
+ *     description: Permet d'ajouter un nouveau contact avec nom, téléphone et tags associés.
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               nom:
+ *                 type: string
+ *                 description: Nom du contact.
+ *                 example: John Doe
+ *               tel:
+ *                 type: string
+ *                 description: Numéro de téléphone du contact.
+ *                 example: +1234567890
+ *               tags:
+ *                 type: array
+ *                 description: Liste des tags associés au contact.
+ *                 items:
+ *                   type: string
+ *                   example: famille
+ *                   description: Tag associé au contact.
+ *     responses:
+ *       '200':
+ *         description: Contact ajouté avec succès.
+ *       '400':
+ *         description: Requête invalide, veuillez vérifier les données fournies.
+ *       '500':
+ *         description: Erreur interne du serveur.
+ */
+
 router.post('/contact/ajouter',controller.ajouterContact);
 
 
